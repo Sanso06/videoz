@@ -1,0 +1,28 @@
+<section>
+    <form id="registerForm" action="/users/register" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <span class="error" id="usernameError"></span>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <span class="error" id="passwordError"></span>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <span class="error" id="confirmError"></span>
+
+        <label><input type="checkbox" id="age" name="age" value="yes" required> I am 13 years of age or older</label>
+
+        <label><input type="checkbox" id="tos" name="tos" value="yes" required> I accept the <a href="#">TOS and Privacy Rules</a></label>
+
+        <button type="submit" class="btn">Register</button>
+
+        <p id="successMessage"></p>
+    </form>
+</section>
+
+<p>Already have an account? <a href="/login">Log in</a>.</p>
