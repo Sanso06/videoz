@@ -1,0 +1,24 @@
+<section class="card profile-card">
+    <h2>{{profileUser.username}}</h2>
+    <p><strong>Email:</strong> {{profileUser.email}}</p>
+    <p><strong>Member since:</strong> {{formatDate profileUser.createdAt}}</p>
+    <p><strong>Videos posted:</strong> {{postCount}}</p>
+
+    {{#if isOwnProfile}}
+        <p><a class="btn btn-small" href="/postvideo">Post a New Video</a></p>
+    {{/if}}
+</section>
+
+<h2>{{#if isOwnProfile}}My Videos{{else}}{{profileUser.username}}'s Videos{{/if}}</h2>
+
+{{#if posts.length}}
+    <div class="post-grid">
+        {{#each posts}}
+            {{> postcard}}
+        {{/each}}
+    </div>
+{{else}}
+    <div class="card empty-state">
+        <p>No videos posted yet.</p>
+    </div>
+{{/if}}
