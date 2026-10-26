@@ -1,0 +1,15 @@
+<section class="card error-card">
+    <p class="error-status">Error {{error.status}}</p>
+    <p class="error-message">{{message}}</p>
+    <p><a class="btn btn-small" href="/">Back to Home</a></p>
+</section>
+
+{{#if error.stack}}
+    {{!-- Only rendered outside production. A stack trace names internal file
+          paths and line numbers: useful while developing, a gift to an attacker
+          in production, so app.js withholds it when NODE_ENV=production. --}}
+    <details class="card error-details">
+        <summary>Technical details (development only)</summary>
+        <pre>{{error.stack}}</pre>
+    </details>
+{{/if}}
