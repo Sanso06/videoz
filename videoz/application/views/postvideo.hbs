@@ -1,0 +1,22 @@
+<form action="/posts" method="post" enctype="multipart/form-data">
+    {{!-- Filled in by postvideo.js with a JPEG captured from the chosen video. --}}
+    <input type="hidden" name="thumbnailData" value="">
+
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required minlength="3" maxlength="255">
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description"></textarea>
+
+    <label for="video">Video File:</label>
+    <input type="file" id="video" name="video" accept="video/*" required>
+
+    <p id="thumbStatus" class="thumb-status"></p>
+    <img id="thumbPreview" class="thumb-preview" hidden alt="Thumbnail preview">
+
+    <label>
+        <input type="checkbox" name="acceptPolicy" value="yes" required> I accept the Acceptable Use Policy
+    </label>
+
+    <button type="submit" class="btn">Post Video</button>
+</form>
