@@ -1,0 +1,5 @@
+{{#if flash}}
+    {{!-- role=status so screen readers announce the result of an action
+          (registered, logged in, post deleted) without stealing focus. --}}
+    <p class="flash flash-{{flash.type}}" role="status">{{flash.message}}</p>
+{{/if}}
