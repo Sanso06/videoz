@@ -1,0 +1,20 @@
+<p class="tagline">Hello World, I am {{ name }}</p>
+
+<h2>Latest Videos</h2>
+
+{{#if hasPosts}}
+    <div class="post-grid">
+        {{#each posts}}
+            {{> postcard}}
+        {{/each}}
+    </div>
+{{else}}
+    <div class="card empty-state">
+        <p>No videos have been posted yet.</p>
+        {{#if isLoggedIn}}
+            <p><a href="/postvideo">Be the first to post one.</a></p>
+        {{else}}
+            <p><a href="/registration">Create an account</a> to post the first video.</p>
+        {{/if}}
+    </div>
+{{/if}}
