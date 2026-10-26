@@ -1,0 +1,13 @@
+<form id="loginForm" action="/users/login" method="post">
+    <label for="loginUsername">Username or Email:</label>
+    <input type="text" id="loginUsername" name="username" required>
+    <span class="error" id="loginUsernameError"></span>
+
+    <label for="loginPassword">Password:</label>
+    <input type="password" id="loginPassword" name="password" required>
+    <span class="error" id="loginPasswordError"></span>
+
+    <button type="submit" class="btn">Login</button>
+</form>
+
+<p>New to Videoz? <a href="/registration">Create an account</a>.</p>
