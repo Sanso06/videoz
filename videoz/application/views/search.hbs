@@ -1,0 +1,25 @@
+<form class="search-form search-form-page" action="/search" method="get">
+    <label for="searchQuery">Search videos:</label>
+    <input type="search" id="searchQuery" name="q" value="{{query}}" placeholder="Title, description, or username">
+    <button type="submit" class="btn">Search</button>
+</form>
+
+{{#if searched}}
+    <h2>{{pluralize resultCount "result" "results"}} for &ldquo;{{query}}&rdquo;</h2>
+
+    {{#if hasPosts}}
+        <div class="post-grid">
+            {{#each posts}}
+                {{> postcard}}
+            {{/each}}
+        </div>
+    {{else}}
+        <div class="card empty-state">
+            <p>No results found. Try a different search term.</p>
+        </div>
+    {{/if}}
+{{else}}
+    <div class="card empty-state">
+        <p>Enter a search term above to find videos.</p>
+    </div>
+{{/if}}
