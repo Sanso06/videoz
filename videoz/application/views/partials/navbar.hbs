@@ -1,0 +1,19 @@
+<nav class="navbar" aria-label="Main navigation">
+    <div class="nav-links">
+        <a href="/">Home</a>
+        {{#if isLoggedIn}}
+            <a href="/postvideo">Post Video</a>
+            <a href="/users/{{user.id}}">My Profile</a>
+            <a href="/users/logout">Logout ({{user.username}})</a>
+        {{else}}
+            <a href="/login">Login</a>
+            <a href="/registration">Register</a>
+        {{/if}}
+    </div>
+
+    <form class="search-form" action="/search" method="get" role="search">
+        <label class="visually-hidden" for="navSearch">Search videos</label>
+        <input type="search" id="navSearch" name="q" value="{{query}}" placeholder="Search videos...">
+        <button type="submit" class="btn btn-small">Search</button>
+    </form>
+</nav>
